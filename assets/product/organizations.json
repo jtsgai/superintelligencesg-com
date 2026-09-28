@@ -768,5 +768,115 @@
     "logo": "assets/navigator/sectoral-ai-centre-of-excellence-for-manufacturing.png",
     "id": "public-sectoral-ai-centre-of-excellence-for-manufacturing",
     "updated": "2026-09-28"
+  },
+  {
+    "name": "FWD AI Lab",
+    "founder": "FWD Group",
+    "description": "A Singapore AI and data-science lab developing and deploying insurance AI, including work on agentic systems.",
+    "source": "public",
+    "kind": "Company",
+    "url": "https://www.edb.gov.sg/en/about-edb/media-releases-publications/fwd-group-establishes-ai-lab-in-singapore-with-edb-support.html",
+    "logo": "assets/navigator/fwd-ai-lab.png",
+    "id": "public-fwd-ai-lab",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "Manulife AI Centre of Excellence",
+    "founder": "Manulife Singapore",
+    "description": "A Singapore AI centre developing and scaling AI solutions for customer experience, advice, recommendations and workforce tools.",
+    "source": "public",
+    "kind": "Company",
+    "url": "https://www.edb.gov.sg/en/about-edb/media-releases-publications/manulife-launches-ai-centre-of-excellence-in-singapore.html",
+    "logo": "assets/navigator/manulife-ai-centre-of-excellence.png",
+    "id": "public-manulife-ai-centre-of-excellence",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "AISG PhD Fellowship Programme",
+    "founder": "AI Singapore",
+    "description": "A programme supporting PhD study at Singapore autonomous universities to develop advanced fundamental AI research talent.",
+    "source": "public",
+    "kind": "Education & research",
+    "url": "https://aisingapore.org/research/phd-fellowship-programme/",
+    "logo": "assets/navigator/aisg-phd-fellowship-programme.png",
+    "id": "public-aisg-phd-fellowship-programme",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "AISG Masters Research Programme",
+    "founder": "AI Singapore",
+    "description": "A research-talent programme supporting full-time Masters studies in AI at Singapore autonomous universities.",
+    "source": "public",
+    "kind": "Education & research",
+    "url": "https://aisingapore.org/wp-content/uploads/2025/06/2-AISG-Research-AMP-Application-Guideline_Aug-2025-Intake_IHL_v1.pdf",
+    "logo": "assets/navigator/aisg-masters-research-programme.png",
+    "id": "public-aisg-masters-research-programme",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "Grab AI Programme for SMEs",
+    "founder": "Grab, IMDA and SUTD",
+    "description": "A programme for Singapore F&B, e-commerce and retail SMEs, offering AI awareness, training and practical adoption support.",
+    "source": "public",
+    "kind": "Public capability",
+    "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2026/imda-partners-with-grab-and-rsm-stone-forest-it-to-uplift-12000-smes-in-ai-and-cybersecurity",
+    "logo": "assets/navigator/grab-ai-programme-for-smes.png",
+    "id": "public-grab-ai-programme-for-smes",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "Project Aquarium",
+    "founder": "Google DeepMind and AI Singapore",
+    "description": "A Singapore collaboration sourcing Southeast Asian language data to strengthen regional-language AI models, including SEA-LION.",
+    "source": "public",
+    "kind": "Applied research",
+    "url": "https://www.edb.gov.sg/en/business-insights/insights/openai-nvidia-and-kpmg-among-major-firms-that-have-set-up-ai-centres-labs-in-singapore.html",
+    "logo": "assets/navigator/project-aquarium.png",
+    "id": "public-project-aquarium",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "Punggol Digital District Robot Testbed",
+    "founder": "Punggol Digital District ecosystem",
+    "description": "A Singapore testbed where partners test robotics and AI systems in real-world conditions for areas such as security, cleaning and delivery.",
+    "source": "public",
+    "kind": "Applied research",
+    "url": "https://www.edb.gov.sg/en/business-insights/insights/openai-nvidia-and-kpmg-among-major-firms-that-have-set-up-ai-centres-labs-in-singapore.html",
+    "logo": "assets/navigator/punggol-digital-district-robot-testbed.png",
+    "id": "public-punggol-digital-district-robot-testbed",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "AutoCodeRover",
+    "founder": "National University of Singapore origin",
+    "description": "An LLM-based software-engineering agent developed by NUS researchers and later acquired by Sonar.",
+    "source": "public",
+    "kind": "Applied research",
+    "url": "https://www.edb.gov.sg/en/business-insights/insights/the-latest-in-singapores-ai-scene-that-businesses-should-know-a-round-up-from-april-to-june-2026.html",
+    "logo": "assets/navigator/autocoderover.png",
+    "id": "public-autocoderover",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "Publicis Groupe APAC AI Development Hub",
+    "founder": "Publicis Groupe",
+    "description": "A Singapore AI development hub building and scaling proprietary marketing technologies, with local talent and research partnerships.",
+    "source": "public",
+    "kind": "Company",
+    "url": "https://www.edb.gov.sg/en/business-insights/insights/the-latest-in-singapores-ai-scene-that-businesses-should-know-a-round-up-from-april-to-june-2026.html",
+    "logo": "assets/navigator/publicis-groupe-apac-ai-development-hub.png",
+    "id": "public-publicis-groupe-apac-ai-development-hub",
+    "updated": "2026-09-29"
+  },
+  {
+    "name": "National Semiconductor Translation and Innovation Centre",
+    "founder": "Singapore national semiconductor initiative",
+    "description": "A national centre supporting semiconductor ecosystem collaboration, including technologies relevant to AI hardware and computing.",
+    "source": "public",
+    "kind": "Public capability",
+    "url": "https://www.edb.gov.sg/content/dam/edb-en/business-insights/market-and-industry-reports/singapores-2024-budget-for-businesses-booklet/Business%20Budget%20booklet%202024.pdf",
+    "logo": "assets/navigator/national-semiconductor-translation-and-innovation-centre.png",
+    "id": "public-national-semiconductor-translation-and-innovation-centre",
+    "updated": "2026-09-29"
   }
 ]
