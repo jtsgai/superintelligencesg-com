@@ -1,0 +1,145 @@
+[
+  {
+    "name": "AI Singapore",
+    "founder": "Singapore national AI programme",
+    "description": "National programmes spanning research, products, innovation and talent.",
+    "source": "public",
+    "kind": "Ecosystem",
+    "url": "https://aisingapore.org/",
+    "logo": "assets/navigator/ai-singapore.png",
+    "id": "public-ai-singapore",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "NUS AI Institute",
+    "founder": "National University of Singapore",
+    "description": "An institute bringing together foundational and applied AI research with work on societal impact for public good.",
+    "source": "public",
+    "kind": "Research",
+    "url": "https://ai.nus.edu.sg/",
+    "logo": "assets/navigator/nus-ai.svg",
+    "id": "public-nus-ai-institute",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "National AI Impact Programme",
+    "founder": "Infocomm Media Development Authority",
+    "description": "A national programme supporting enterprises and workers as they build practical AI capability and adoption.",
+    "source": "public",
+    "kind": "Public capability",
+    "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2026/national-ai-impact-programme",
+    "logo": "assets/navigator/imda.ico",
+    "id": "public-national-ai-impact-programme",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "AI Verify Foundation",
+    "founder": "IMDA ecosystem non-profit",
+    "description": "An open-source community building AI governance testing tools, standards and practical assurance resources.",
+    "source": "public",
+    "kind": "Governance",
+    "url": "https://aiverifyfoundation.sg/",
+    "logo": "assets/navigator/ai-verify.jpg",
+    "id": "public-ai-verify-foundation",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "A*STAR",
+    "founder": "Agency for Science, Technology and Research",
+    "description": "Singapore’s public research agency, connecting scientific discovery, engineering and translation across the innovation ecosystem.",
+    "source": "public",
+    "kind": "Research",
+    "url": "https://www.a-star.edu.sg/",
+    "logo": "assets/navigator/astar.ico",
+    "id": "public-a-star",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "NTU AI Research Institute",
+    "founder": "Nanyang Technological University",
+    "description": "A university-wide institute coordinating AI research and applying it across engineering, health, urban systems and society.",
+    "source": "public",
+    "kind": "Research",
+    "url": "https://www.ntu.edu.sg/research/research-focus/research-cluster-1-artificalandaugumentedintelligence/about-the-cluster",
+    "logo": "assets/navigator/ntu.ico",
+    "id": "public-ntu-ai-research-institute",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "NTU Centre of AI-for-X",
+    "founder": "Nanyang Technological University",
+    "description": "An interdisciplinary research hub developing AI methods and applying them across engineering, finance, medicine, sustainability and social science.",
+    "source": "public",
+    "kind": "Applied research",
+    "url": "https://www.ntu.edu.sg/ai-x",
+    "logo": "assets/navigator/ntu.ico",
+    "id": "public-ntu-centre-of-ai-for-x",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "SUTD Artificial Intelligence",
+    "founder": "Singapore University of Technology and Design",
+    "description": "A multidisciplinary programme connecting AI education, research and industry implementation with a design-led approach.",
+    "source": "public",
+    "kind": "Education & research",
+    "url": "https://www.sutd.edu.sg/research/artificial-intelligence-ai/",
+    "logo": "assets/navigator/sutd.png",
+    "id": "public-sutd-artificial-intelligence",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "SGInnovate",
+    "founder": "Singapore deep-tech ecosystem builder",
+    "description": "Invests in deep-tech startups, develops talent and builds connections across Singapore’s emerging technology community.",
+    "source": "public",
+    "kind": "Ecosystem",
+    "url": "https://www.sginnovate.com/",
+    "logo": "assets/navigator/sginnovate.png",
+    "id": "public-sginnovate",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "Sea AI Lab",
+    "founder": "Sea Limited",
+    "description": "A Singapore-based research lab working on core AI research and AI-empowered research in challenging fields.",
+    "source": "public",
+    "kind": "Research",
+    "url": "https://sail.sea.com/about-us",
+    "logo": "assets/navigator/sea-ai-lab.png",
+    "id": "public-sea-ai-lab",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "PatSnap",
+    "founder": "Singapore-founded innovation intelligence company",
+    "description": "An AI-native platform helping R&D and IP teams find, interpret and act on scientific and patent intelligence.",
+    "source": "public",
+    "kind": "Company",
+    "url": "https://www.patsnap.com/about-us",
+    "logo": "assets/navigator/patsnap.ico",
+    "id": "public-patsnap",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "TAIGER",
+    "founder": "Singapore AI company",
+    "description": "Develops AI solutions that automate knowledge work through natural language processing, machine learning and reasoning.",
+    "source": "public",
+    "kind": "Company",
+    "url": "https://taiger.ai/",
+    "logo": "assets/navigator/taiger.png",
+    "id": "public-taiger",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "Biofourmis",
+    "founder": "Singapore-founded digital health company",
+    "description": "Builds AI-powered health analytics and digital therapeutics that support more personalised care and clinical decisions.",
+    "source": "public",
+    "kind": "Health AI",
+    "url": "https://biofourmis.com/about",
+    "logo": "assets/navigator/biofourmis.png",
+    "id": "public-biofourmis",
+    "updated": "2026-09-28"
+  }
+]
