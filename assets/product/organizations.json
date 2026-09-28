@@ -46,7 +46,7 @@
   {
     "name": "A*STAR",
     "founder": "Agency for Science, Technology and Research",
-    "description": "Singapore’s public research agency, connecting scientific discovery, engineering and translation across the innovation ecosystem.",
+    "description": "Singapore\u2019s public research agency, connecting scientific discovery, engineering and translation across the innovation ecosystem.",
     "source": "public",
     "kind": "Research",
     "url": "https://www.a-star.edu.sg/",
@@ -90,7 +90,7 @@
   {
     "name": "SGInnovate",
     "founder": "Singapore deep-tech ecosystem builder",
-    "description": "Invests in deep-tech startups, develops talent and builds connections across Singapore’s emerging technology community.",
+    "description": "Invests in deep-tech startups, develops talent and builds connections across Singapore\u2019s emerging technology community.",
     "source": "public",
     "kind": "Ecosystem",
     "url": "https://www.sginnovate.com/",
@@ -140,6 +140,171 @@
     "url": "https://biofourmis.com/about",
     "logo": "assets/navigator/biofourmis.png",
     "id": "public-biofourmis",
+    "updated": "2026-09-28"
+  },
+  {
+    "id": "public-iaic",
+    "name": "Institute of Advanced Intelligence and Computing",
+    "founder": "A*STAR research entity",
+    "description": "A*STAR research entity working on advanced intelligence and computing capabilities in Singapore.",
+    "kind": "Research",
+    "url": "https://www.sgdi.gov.sg/ministries/mti/statutory-boards/a-star/departments/re/departments/iaic",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/iaic.png"
+  },
+  {
+    "id": "public-nscc",
+    "name": "National Supercomputing Centre Singapore",
+    "founder": "National Research Foundation infrastructure",
+    "description": "National high-performance computing infrastructure supporting research, innovation and AI work across Singapore.",
+    "kind": "Public capability",
+    "url": "https://www.nscc.sg/",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/nscc.png"
+  },
+  {
+    "id": "public-digital-trust-centre",
+    "name": "Digital Trust Centre",
+    "founder": "NTU Singapore national centre",
+    "description": "National trust-technology research centre that leads work including AI safety, testing and digital trust innovation.",
+    "kind": "Governance",
+    "url": "https://www.ntu.edu.sg/dtc",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/digital-trust-centre.png"
+  },
+  {
+    "id": "public-singapore-aisi",
+    "name": "Singapore AI Safety Institute",
+    "founder": "Housed at the Digital Trust Centre",
+    "description": "Singapore\u2019s AI safety research capability, bringing together research work on evaluation, testing and AI safety science.",
+    "kind": "Governance",
+    "url": "https://www.ntu.edu.sg/dtc",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/singapore-aisi.png"
+  },
+  {
+    "id": "public-astar-i2r",
+    "name": "A*STAR Institute for Infocomm Research",
+    "founder": "Agency for Science, Technology and Research",
+    "description": "A*STAR research institute with work spanning AI, language and speech, data analytics, cybersecurity, robotics and health technologies.",
+    "kind": "Research",
+    "url": "https://www.a-star.edu.sg/i2r",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/astar-i2r.png"
+  },
+  {
+    "id": "public-centre-ai-medicine",
+    "name": "Centre of AI in Medicine",
+    "founder": "NTU Singapore and National Healthcare Group",
+    "description": "Applied research centre advancing AI in healthcare across mental health, frailty, medical imaging and cancer screening.",
+    "kind": "Health AI",
+    "url": "https://www.ntu.edu.sg/docs/default-source/corporate-ntu/hub-news/ntu-singapore-and-national-healthcare-group-launch-centre-to-advance-artificial-intelligence-in-healthcare.pdf?sfvrsn=d97f986e_1",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/centre-ai-medicine.png"
+  },
+  {
+    "id": "public-naird",
+    "name": "National AI Research and Development Plan",
+    "founder": "Ministry of Digital Development and Information",
+    "description": "National plan supporting fundamental and applied AI research, research centres of excellence and talent development through 2030.",
+    "kind": "Public capability",
+    "url": "https://www.mddi.gov.sg/newsroom/singapore-invests-over-s-1-billion-in-national-ai-research-and-development-plan-to-strengthen-ai-research-capabilities-and-our-position-as-global-ai-hub/",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/naird.png"
+  },
+  {
+    "id": "public-openai-singapore-lab",
+    "name": "OpenAI Singapore Applied AI Lab",
+    "founder": "OpenAI",
+    "description": "Singapore Applied AI Lab announced to support applied AI innovation, deployment talent and work across public services, finance, healthcare and digital infrastructure.",
+    "kind": "Applied research",
+    "url": "https://www.edb.gov.sg/en/about-edb/media-releases-publications/openai-launches-applied-ai-lab-in-singapore.html",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/openai-singapore-lab.png"
+  },
+  {
+    "id": "public-nvidia-singapore-lab",
+    "name": "NVIDIA Singapore AI Research Lab",
+    "founder": "NVIDIA",
+    "description": "Singapore research lab announced to work with university researchers, industry and government on embodied and efficient AI for manufacturing.",
+    "kind": "Applied research",
+    "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2026/accelerate-real-world-deployment",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/nvidia-singapore-lab.png"
+  },
+  {
+    "id": "public-ai-agents-sandbox",
+    "name": "AI Agents Sandbox",
+    "founder": "CSA, GovTech, IMDA and Google",
+    "description": "A public-private sandbox studying how computer-use AI agents behave in practice, including risk and governance implications.",
+    "kind": "Governance",
+    "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2026/ai-agents-insights-from-the-singapore-government-and-google-sandbox",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/ai-agents-sandbox.png"
+  },
+  {
+    "id": "public-project-moonshot",
+    "name": "Project Moonshot",
+    "founder": "IMDA and AI Verify Foundation collaborators",
+    "description": "A testing and evaluation initiative linked to AI Verify, advancing methods and benchmarks for large language model assurance.",
+    "kind": "Governance",
+    "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2024/project-moonshot",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/project-moonshot.png"
+  },
+  {
+    "id": "public-datature",
+    "name": "Datature",
+    "founder": "Singapore computer vision company",
+    "description": "A computer vision platform for managing data, training models and deploying vision AI across sectors such as manufacturing, agriculture and healthcare.",
+    "kind": "Company",
+    "url": "https://www.imda.gov.sg/resources/innovative-tech-companies-directory/datature",
+    "source": "public",
+    "updated": "2026-09-28",
+    "logo": "assets/navigator/datature.png"
+  },
+  {
+    "id": "public-govtech-singapore",
+    "name": "GovTech Singapore",
+    "founder": "Government Technology Agency",
+    "description": "Singapore\u2019s government technology agency, contributing to practical work on public-sector digital systems and AI deployment.",
+    "source": "public",
+    "kind": "Public capability",
+    "url": "https://www.tech.gov.sg/",
+    "logo": "assets/navigator/govtech-singapore.png",
+    "updated": "2026-09-28"
+  },
+  {
+    "id": "public-csa-singapore",
+    "name": "Cyber Security Agency of Singapore",
+    "founder": "Singapore government cyber security agency",
+    "description": "National cyber security agency participating in public work on how computer-use AI agents behave, are tested and are governed in practice.",
+    "source": "public",
+    "kind": "Governance",
+    "url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2026/ai-agents-insights-from-the-singapore-government-and-google-sandbox",
+    "logo": "assets/navigator/csa-singapore.png",
+    "updated": "2026-09-28"
+  },
+  {
+    "id": "public-nrf-singapore",
+    "name": "National Research Foundation Singapore",
+    "founder": "Singapore research and innovation agency",
+    "description": "National agency supporting Singapore\u2019s research and innovation system, including AI research capability under the National AI Research and Development Plan.",
+    "source": "public",
+    "kind": "Public capability",
+    "url": "https://www.mddi.gov.sg/newsroom/singapore-invests-over-s-1-billion-in-national-ai-research-and-development-plan-to-strengthen-ai-research-capabilities-and-our-position-as-global-ai-hub/",
+    "logo": "assets/navigator/nrf-singapore.png",
     "updated": "2026-09-28"
   }
 ]
