@@ -493,5 +493,60 @@
     "logo": "assets/navigator/imda.ico",
     "id": "public-national-ai-council",
     "updated": "2026-09-28"
+  },
+  {
+    "name": "Microsoft Research Asia — Singapore",
+    "founder": "Microsoft Research",
+    "description": "Microsoft’s first Southeast Asian research lab, advancing fundamental and applied AI research, industry collaboration and AI talent development from Singapore.",
+    "source": "public",
+    "kind": "Research",
+    "url": "https://www.microsoft.com/en-us/research/group/microsoft-research-asia-singapore/",
+    "logo": "assets/navigator/microsoft-research-singapore.png",
+    "id": "public-microsoft-research-asia---singapore",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "Singtel AIDA",
+    "founder": "Singtel Group",
+    "description": "Singtel’s Artificial Intelligence & Data Analytics business unit, building AI capability across the enterprise.",
+    "source": "public",
+    "kind": "Company",
+    "url": "https://groupcareers.singtel.com/go/Artificial-Intelligence-%26-Data-Analytics-%28AIDA%29/7992966/",
+    "logo": "assets/navigator/singtel-aida.png",
+    "id": "public-singtel-aida",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "Singtel AI.dea",
+    "founder": "Singtel and SIM Academy",
+    "description": "An eight-week AI bridge programme supporting organisations in developing use cases, testing plans, governance and execution playbooks.",
+    "source": "public",
+    "kind": "Public capability",
+    "url": "https://www.singtel.com/business/products-services/cybersecurity/cyber-education/ai-dea",
+    "logo": "assets/navigator/singtel-ai-dea.png",
+    "id": "public-singtel-ai-dea",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "ITE Artificial Intelligence Lab",
+    "founder": "Institute of Technical Education and Microsoft",
+    "description": "An AI teaching and resource centre at ITE College East for students and educators exploring AI applications and responsible AI principles.",
+    "source": "public",
+    "kind": "Education & research",
+    "url": "https://news.microsoft.com/en-sg/2022/05/28/ite-and-microsoft-collaborate-to-equip-over-4000-students-with-responsible-ai-skills/",
+    "logo": "assets/navigator/ite-ai-lab.png",
+    "id": "public-ite-artificial-intelligence-lab",
+    "updated": "2026-09-28"
+  },
+  {
+    "name": "NCS AI and Digital Resilience",
+    "founder": "NCS",
+    "description": "A Singapore-based technology-services initiative offering AI accelerators and tools intended to help organisations deploy AI at scale.",
+    "source": "public",
+    "kind": "Company",
+    "url": "https://www.singtel.com/content/dam/singtel/investorRelations/stockExchange/2024/Halfyear-MDA.pdf",
+    "logo": "assets/navigator/ncs-ai-dr.png",
+    "id": "public-ncs-ai-and-digital-resilience",
+    "updated": "2026-09-28"
   }
 ]
