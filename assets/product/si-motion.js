@@ -22,4 +22,17 @@
     });
   }, { threshold: .12, rootMargin: '0px 0px -6%' });
   sections.forEach(section => { section.dataset.siReveal = ''; observer.observe(section); });
+  if (site !== 'commons') {
+    let commonsWarmed = false;
+    const warmCommons = () => {
+      if (commonsWarmed) return;
+      commonsWarmed = true;
+      fetch('https://superintelligencesg.org/', { mode: 'no-cors', credentials: 'omit', cache: 'no-store', keepalive: true }).catch(() => {});
+    };
+    document.querySelectorAll('a[href^="https://superintelligencesg.org"]').forEach(link => {
+      link.addEventListener('pointerenter', warmCommons, { once: true });
+      link.addEventListener('focus', warmCommons, { once: true });
+      link.addEventListener('touchstart', warmCommons, { once: true, passive: true });
+    });
+  }
 })();
