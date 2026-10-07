@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b1521"/>
+  <rect x="70" y="68" width="1060" height="494" rx="0" fill="none" stroke="#314758" stroke-width="2"/>
+  <text x="102" y="118" fill="#f6c75b" font-family="Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="5">SUPERINTELLIGENCE SG</text>
+  <text x="102" y="170" fill="#88b8d5" font-family="SFMono-Regular, Consolas, monospace" font-size="17" font-weight="700" letter-spacing="2">SINGAPORE AI NAVIGATOR / COLLECTION 01</text>
+  <text x="102" y="270" fill="#f4f0e7" font-family="Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif" font-size="69" font-weight="650" letter-spacing="-3">Trusted deployment</text>
+  <text x="102" y="340" fill="#f4f0e7" font-family="Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif" font-size="69" font-weight="650" letter-spacing="-3">starts with evidence.</text>
+  <text x="105" y="402" fill="#b5c1c9" font-family="Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif" font-size="29">10 public starting points for testing, governance</text>
+  <text x="105" y="438" fill="#b5c1c9" font-family="Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif" font-size="29">and responsible AI deployment in Singapore.</text>
+  <line x1="102" y1="492" x2="565" y2="492" stroke="#f6c75b" stroke-width="4"/>
+  <text x="102" y="530" fill="#f6c75b" font-family="SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" letter-spacing="2">SOURCES · TESTING · GOVERNANCE</text>
+  <g transform="translate(894 127)">
+    <rect x="0" y="0" width="200" height="200" rx="50" fill="#112335"/>
+    <circle cx="100" cy="100" r="62" fill="none" stroke="#f6c75b" stroke-width="16" stroke-linecap="round" stroke-dasharray="225 165" transform="rotate(-42 100 100)"/>
+    <circle cx="100" cy="100" r="37" fill="none" stroke="#88b8d5" stroke-width="11" stroke-linecap="round" stroke-dasharray="118 114" transform="rotate(138 100 100)"/>
+    <circle cx="100" cy="100" r="8" fill="#f6c75b"/>
+  </g>
+  <text x="983" y="384" fill="#f6c75b" font-family="SFMono-Regular, Consolas, monospace" font-size="66" font-weight="700" text-anchor="middle">10</text>
+  <text x="983" y="414" fill="#b5c1c9" font-family="Avenir Next, Avenir, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle">PUBLIC REFERENCES</text>
+  <text x="102" y="594" fill="#b5c1c9" font-family="SFMono-Regular, Consolas, monospace" font-size="16" letter-spacing="1.5">SUPERINTELLIGENCESG.COM / DIRECTORY</text>
+</svg>

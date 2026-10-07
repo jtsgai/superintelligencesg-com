@@ -1,0 +1,77 @@
+/* Responsive site navigation: keep cross-site destinations available on phones. */
+@media (max-width: 820px) {
+  .header,
+  .site-header {
+    height: auto !important;
+    min-height: 68px;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 4px;
+    padding-top: 10px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .header > .nav,
+  .site-header > .nav {
+    flex: 0 0 100%;
+    width: 100%;
+    justify-content: space-between;
+    gap: clamp(8px, 2.6vw, 18px);
+    margin-top: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+
+  .header > .nav::-webkit-scrollbar,
+  .site-header > .nav::-webkit-scrollbar,
+  .header-actions > .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header-actions {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+    gap: clamp(8px, 2vw, 16px);
+  }
+
+  .header-actions > .nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: space-between;
+    gap: clamp(7px, 2vw, 14px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+
+  header .nav a {
+    display: inline-flex !important;
+    flex: 0 0 auto;
+    min-height: 44px;
+    align-items: center;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .header > .nav,
+  .site-header > .nav,
+  .header-actions > .nav {
+    gap: 7px;
+  }
+
+  header .nav {
+    font-size: 11px;
+  }
+
+  .header-actions .nav-tool {
+    min-height: 44px;
+    padding-inline: 8px;
+    font-size: 10px;
+  }
+}
