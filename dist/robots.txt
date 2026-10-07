@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /source-desk-admin.html
 
 Sitemap: https://superintelligencesg.com/sitemap.xml
