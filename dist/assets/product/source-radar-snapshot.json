@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "checked_at": "2026-10-07T18:33:48.781Z",
+  "run_url": "https://github.com/jtsgai/superintelligencesg-org/actions/runs/37667753182",
+  "notice": "Automatically discovered official source links. Discovery is not editorial verification; page modification is not publication.",
+  "items": [
+    {
+      "provider": "MDDI",
+      "title": "MDDI's Response to PQ on Providing Pre-Deployment Government Access to Frontier AI Models for Independent Evaluation of National Security Risks…",
+      "url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-providing-pre-deployment-government-access-to-frontier-ai-models-for-independent-evaluation-of-national-security-risks-and-vulnerab/",
+      "published_at": null,
+      "source_updated_at": "2026-10-07T04:21:17.477Z",
+      "discovered_at": "2026-10-07T18:24:05.382Z",
+      "status": "automatically_discovered"
+    },
+    {
+      "provider": "MDDI",
+      "title": "MDDI's Response to PQ on Impact of Foreign AI Chip Export Controls and Remote Computing Access Restrictions on Singapore's Data…",
+      "url": "https://www.mddi.gov.sg/newsroom/mddi-response-to-pq-on-impact-of-foreign-ai-chip-export-controls-and-remote-computing-access-restrictions-on-singapore-data-centre-and-cloud-services-sectors-and-mitigation-measures/",
+      "published_at": null,
+      "source_updated_at": "2026-10-07T03:28:37.232Z",
+      "discovered_at": "2026-10-07T18:24:05.382Z",
+      "status": "automatically_discovered"
+    },
+    {
+      "provider": "MDDI",
+      "title": "Speech by Minister Josephine Teo at the Asia Tech x Artificial Intelligence Conference | Ministry of Digital Development and Information",
+      "url": "https://www.mddi.gov.sg/newsroom/speech-by-minister-josephine-teo-at-the-asia-tech-x-ai-conference/",
+      "published_at": null,
+      "source_updated_at": "2026-10-06T07:04:51.017Z",
+      "discovered_at": "2026-10-07T18:33:48.781Z",
+      "status": "automatically_discovered"
+    },
+    {
+      "provider": "MDDI",
+      "title": "Opening Address by SMS Tan Kiat How at the National Translation Committee (NTC) Conference 2026: Reimagining Translation In The Age…",
+      "url": "https://www.mddi.gov.sg/newsroom/opening-address-by-sms-tan-kiat-how-at-the-national-translation-committee--ntc--conference-2026--reimagining-translation-in-the-age-of-ai/",
+      "published_at": null,
+      "source_updated_at": "2026-10-01T02:59:22.532Z",
+      "discovered_at": "2026-10-07T18:33:48.781Z",
+      "status": "automatically_discovered"
+    }
+  ]
+}
