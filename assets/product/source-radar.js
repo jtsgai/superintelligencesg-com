@@ -22,7 +22,7 @@
       const provider = document.createElement('span'); provider.className = 'date'; provider.textContent = item.provider;
       const body = document.createElement('div'), heading = document.createElement('h2'), link = document.createElement('a');
       link.href = url.href; link.textContent = item.title; heading.append(link);
-      const note = document.createElement('p'); note.textContent = item.status === 'source_reviewed' ? 'Source reviewed · read the original for details' : 'Automated discovery · awaiting editorial review';
+      const note = document.createElement('p'); note.textContent = item.status === 'source_reviewed' ? 'Source reviewed · read the original for details' : item.status === 'cited_source' ? 'Cited in the Lab · automatically checked' : 'Automated discovery · awaiting editorial review';
       const dates = document.createElement('p'); dates.className = 'evidence-line'; dates.textContent = `Article publication: ${date(item.published_at)} · Page modified: ${date(item.source_updated_at)}`;
       body.append(heading, note, dates); article.append(provider, body); root.append(article);
     }
