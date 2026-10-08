@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const root = document.querySelector('#radar-items'), status = document.querySelector('#radar-status');
+  const root = document.querySelector('#radar-items'), status = document.querySelector('#radar-status'), coverage = document.querySelector('#radar-coverage');
   const allowed = new Set(['www.mddi.gov.sg', 'www.imda.gov.sg', 'aisingapore.org', 'www.smartnation.gov.sg']);
   const date = value => value && Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('en-SG', { timeZone: 'Asia/Singapore', dateStyle: 'medium' }).format(new Date(value)) : 'Not confirmed';
   async function load(url) {
@@ -12,6 +12,18 @@
   }
   function render(data, saved) {
     root.replaceChildren();
+    if (coverage) {
+      coverage.replaceChildren();
+      if (Array.isArray(data.coverage)) {
+        for (const item of data.coverage) {
+          if (typeof item?.provider !== 'string' || !['checked', 'unavailable'].includes(item.state)) continue;
+          const chip = document.createElement('span'); chip.className = 'coverage-chip'; chip.dataset.state = item.state;
+          chip.textContent = item.state === 'checked' ? `${item.provider} · ${Number.isInteger(item.listed) ? item.listed : 0} shown` : `${item.provider} · awaiting reliable check`;
+          coverage.append(chip);
+        }
+      }
+      coverage.hidden = !coverage.childElementCount;
+    }
     const refreshed = new Intl.DateTimeFormat('en-SG', { timeZone: 'Asia/Singapore', dateStyle: 'medium', timeStyle: 'short' }).format(new Date(data.checked_at));
     const stale = Date.now() - Date.parse(data.checked_at) > 48 * 3600000;
     status.textContent = `${saved ? 'Saved snapshot · ' : ''}Last collected ${refreshed} SGT.${stale ? ' Collection is overdue; these links may have changed.' : ''}${saved ? ' Latest refresh unavailable.' : ''}`;
