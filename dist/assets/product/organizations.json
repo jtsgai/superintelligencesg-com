@@ -577,10 +577,10 @@
     "description": "A Singapore capability hub for assessing, testing and helping organisations scale trusted AI deployment.",
     "source": "public",
     "kind": "Governance",
-    "url": "https://www.edb.gov.sg/en/business-insights/insights/openai-nvidia-and-kpmg-among-major-firms-that-have-set-up-ai-centres-labs-in-singapore.html",
+    "url": "https://www.edb.gov.sg/en/news-and-insights/openai-nvidia-and-kpmg-among-major-firms-that-have-set-up-ai-centres-labs-in-singapore",
     "logo": "assets/navigator/kpmg-trusted-ai-centre-of-excellence.png",
     "id": "public-kpmg-trusted-ai-centre-of-excellence",
-    "updated": "2026-09-28"
+    "updated": "2026-10-10"
   },
   {
     "name": "Mastercard Regional AI Centre of Excellence",
