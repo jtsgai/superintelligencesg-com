@@ -213,8 +213,23 @@
     "kind": "Governance",
     "url": "https://www.ntu.edu.sg/dtc",
     "source": "public",
-    "updated": "2026-09-28",
-    "logo": "assets/navigator/singapore-aisi.png"
+    "updated": "2026-10-12",
+    "logo": "assets/navigator/singapore-aisi.png",
+    "evidence": {
+      "status": "source_verified",
+      "source_type": "official_publication",
+      "source_url": "https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2024/digital-trust-centre",
+      "record_updated_at": "2026-10-12",
+      "checked_at": "2026-10-12",
+      "summary": "IMDA's factsheet designates the Digital Trust Centre as Singapore's AI Safety Institute and describes its role in AI safety science, evaluation and testing.",
+      "history": [
+        {
+          "at": "2026-10-12",
+          "kind": "individual_source_review",
+          "note": "Current IMDA and Digital Trust Centre pages support the Navigator summary and source classification."
+        }
+      ]
+    }
   },
   {
     "id": "public-astar-i2r",
