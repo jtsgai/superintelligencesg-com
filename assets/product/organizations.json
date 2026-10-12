@@ -767,7 +767,22 @@
     "url": "https://www.edb.gov.sg/en/news-and-insights/the-latest-in-singapores-ai-scene-that-businesses-should-know-a-round-up-from-april-to-june-2026",
     "logo": "assets/navigator/sectoral-ai-centre-of-excellence-for-manufacturing.png",
     "id": "public-sectoral-ai-centre-of-excellence-for-manufacturing",
-    "updated": "2026-10-12"
+    "updated": "2026-10-12",
+    "evidence": {
+      "status": "source_verified",
+      "source_type": "official_publication",
+      "source_url": "https://www.edb.gov.sg/en/news-and-insights/the-latest-in-singapores-ai-scene-that-businesses-should-know-a-round-up-from-april-to-june-2026",
+      "record_updated_at": "2026-10-12",
+      "checked_at": "2026-10-12",
+      "summary": "Singapore EDB's current AI round-up names this A*STAR manufacturing centre and describes vision-based defect detection and inspection.",
+      "history": [
+        {
+          "at": "2026-10-12",
+          "kind": "source_url_updated",
+          "note": "The legacy EDB link redirected to this canonical current page."
+        }
+      ]
+    }
   },
   {
     "name": "FWD AI Lab",
