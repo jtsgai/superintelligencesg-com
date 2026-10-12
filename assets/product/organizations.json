@@ -56,7 +56,22 @@
     "url": "https://aiverifyfoundation.sg/",
     "logo": "assets/navigator/ai-verify.jpg",
     "id": "public-ai-verify-foundation",
-    "updated": "2026-09-28"
+    "updated": "2026-10-12",
+    "evidence": {
+      "status": "source_verified",
+      "source_type": "official_publication",
+      "source_url": "https://www.imda.gov.sg/about-imda/emerging-technologies-and-research/artificial-intelligence",
+      "record_updated_at": "2026-10-12",
+      "checked_at": "2026-10-12",
+      "summary": "IMDA identifies AI Verify Foundation as a not-for-profit body it established to advance responsible AI testing through the open-source community; the Foundation's site documents its testing tools, governance resources and assurance work.",
+      "history": [
+        {
+          "at": "2026-10-12",
+          "kind": "individual_source_review",
+          "note": "Current IMDA and Foundation pages support the Navigator summary and source classification."
+        }
+      ]
+    }
   },
   {
     "name": "A*STAR",
