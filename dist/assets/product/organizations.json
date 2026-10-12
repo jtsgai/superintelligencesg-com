@@ -8,7 +8,22 @@
     "url": "https://aisingapore.org/",
     "logo": "assets/navigator/ai-singapore.png",
     "id": "public-ai-singapore",
-    "updated": "2026-09-28"
+    "updated": "2026-10-12",
+    "evidence": {
+      "status": "source_verified",
+      "source_type": "official_publication",
+      "source_url": "https://aisingapore.org/",
+      "record_updated_at": "2026-10-12",
+      "checked_at": "2026-10-12",
+      "summary": "AI Singapore's official homepage describes a national programme spanning research, governance, technology, innovation, products and talent development.",
+      "history": [
+        {
+          "at": "2026-10-12",
+          "kind": "individual_source_review",
+          "note": "The official AI Singapore homepage supports the current Navigator summary."
+        }
+      ]
+    }
   },
   {
     "name": "NUS AI Institute",
