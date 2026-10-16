@@ -75,3 +75,29 @@
     font-size: 10px;
   }
 }
+/* Shared interface type: controls need clear, calm emphasis. */
+:root { --ui-action-weight: 650; --ui-link-weight: 600; }
+button,
+.button,
+.nav-tool,
+.tool-button,
+.page-button,
+.product-button,
+.research-button {
+  font-weight: var(--ui-action-weight) !important;
+}
+.nav,
+.navigator-hero,
+.radar-hero,
+.field-note-link,
+.hero-links a,
+.source,
+.sample-links a,
+.door-link a,
+.source-list a,
+.cross a,
+footer a,
+.intake-copy a,
+.closing a {
+  font-weight: var(--ui-link-weight) !important;
+}
