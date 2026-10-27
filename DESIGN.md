@@ -41,7 +41,7 @@ Motion is limited to hover and focus feedback. Reduced motion preferences are re
 ## Raster provenance
 
 - `assets/com-hero-v2.jpg`: existing Superintelligence SG project artwork from the approved full-bleed homepage direction; no external stock source is used in this build.
-- `assets/singapore-ai-ecosystem-og.png`: existing social preview artwork created for the Singapore AI Ecosystem Map within this project.
+- `assets/singapore-si-ecosystem-og.png`: existing social preview artwork created for the Singapore AI Ecosystem Map within this project.
 - Organization logos in the Navigator are supplied by the organizations through the Commons and are displayed from the published profile data.
 
 ## Finish review
