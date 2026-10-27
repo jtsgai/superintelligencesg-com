@@ -1,0 +1,13 @@
+/* SISG shared ecosystem footer block v1 (identical on .si .com .org .ai; self-contained, no external deps) */
+.sisg-foot{box-sizing:border-box;width:100%;max-width:1100px;margin:0 auto;padding:14px 0 4px;border-top:1px solid rgba(218,230,241,.16);color:#a3b4c4;font:400 12px/1.6 "Avenir Next",Avenir,"Helvetica Neue",sans-serif;letter-spacing:0;text-transform:none;text-align:left}
+.sisg-foot p{margin:0 0 6px;overflow-wrap:anywhere}
+.sisg-foot a{color:#b8e9ff;text-decoration:underline;text-underline-offset:2px}
+.sisg-foot a:hover{color:#c4ed4c}
+.sisg-foot a:focus-visible{outline:2px solid #c4ed4c;outline-offset:2px}
+.sisg-foot__label{font:600 10px/1.4 SFMono-Regular,Consolas,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:#8fa3b5}
+
+/* .com placement: the block sits on its own row inside each page footer. */
+footer.shell{flex-wrap:wrap}
+footer.shell .sisg-foot{flex:0 0 100%;max-width:none}
+footer.sisg-footer{border-top:1px solid #314758;padding:22px 0 30px}
+footer.sisg-footer .sisg-foot{border-top:0;padding-top:0}
