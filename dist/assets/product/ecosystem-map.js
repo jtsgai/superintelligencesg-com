@@ -93,6 +93,7 @@
   SIData.load().then(data => {
     const entries = data.entries.filter(x => x && x.id && x.name);
     const clusters = draw(entries); list(clusters);
-    $('#map-status').textContent = `${entries.length} ${entries.length === 1 ? 'entry' : 'entries'} · ${clusters.length} areas of work · ` + (data.origin === 'live' ? 'live data' : 'saved copy, live data unavailable');
+    const when = window.SIData?.formatUpdated?.(data.updated) || '';
+    $('#map-status').textContent = `${entries.length} ${entries.length === 1 ? 'entry' : 'entries'} · ${clusters.length} areas of work · ` + (data.origin === 'live' ? 'Live data' : 'Offline snapshot') + (when ? ' · Updated ' + when : '');
   }).catch(() => { $('#map-status').textContent = 'The map data could not be loaded. Try the Navigator search instead.'; });
 })();
