@@ -42,6 +42,7 @@ Motion is limited to hover and focus feedback. Reduced motion preferences are re
 
 - `assets/com-hero-v2.jpg`: existing Superintelligence SG project artwork from the approved full-bleed homepage direction; no external stock source is used in this build.
 - `assets/singapore-si-ecosystem-og.png`: existing social preview artwork created for the Singapore AI Ecosystem Map within this project.
+- `assets/navigator-map-og.jpg`: social preview for the Navigator and ecosystem map pages, resized to 1200×630 from a copy of the project's own text-free `p2/hero-navigator.webp` illustration (SI media set, 28 Oct 2026); no external stock source.
 - Organization logos in the Navigator are supplied by the organizations through the Commons and are displayed from the published profile data.
 
 ## Finish review
