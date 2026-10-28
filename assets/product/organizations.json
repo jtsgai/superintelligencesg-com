@@ -2294,6 +2294,32 @@
     }
   },
   {
+    "id": "public-meta-muse",
+    "name": "Meta Muse",
+    "founder": "Meta (Meta Singapore)",
+    "description": "Meta's personal AI agent, available in Singapore from 28 Oct 2026, with early local connector partners including Shopee, Grab, Singapore Airlines, Agoda, ShopBack, Klook, Trip.com and Lazada.",
+    "kind": "Company",
+    "source": "public",
+    "url": "https://muse.ai/",
+    "logo": "assets/navigator/meta-muse.ico",
+    "updated": "2026-10-28",
+    "evidence": {
+      "status": "source_verified",
+      "source_type": "official_publication",
+      "source_url": "https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/",
+      "record_updated_at": "2026-10-28",
+      "checked_at": "2026-10-28",
+      "summary": "Meta Newsroom (27 Oct 2026) says Muse is available in Singapore, with early local connector partners Shopee, Grab, Singapore Airlines, Agoda, ShopBack, Klook, Trip.com and Lazada; connector features roll out progressively.",
+      "history": [
+        {
+          "at": "2026-10-28",
+          "kind": "individual_source_review",
+          "note": "Meta Newsroom post opened with curl on 2026-10-28 (HTTP 200); partner list and Singapore availability match the entry."
+        }
+      ]
+    }
+  },
+  {
     "name": "JT M&C",
     "founder": "Jerry Tuo",
     "description": "We believe intelligence will enter every home — not as a machine, but as a companion.\r\n\r\nhttps://jt-sgai.com/",
