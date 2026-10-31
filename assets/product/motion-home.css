@@ -1,0 +1,29 @@
+/* Homepage scroll polish. Never set position on .hero-media — it stays absolute so type sits over the image.
+   Pre-hide only after html.js-motion. Never use .shell[style]: GSAP writes inline style and that rule re-hid the signal band. */
+.hero-media::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse 38% 34% at 74% 38%,rgb(246 199 91/.07),transparent 70%);
+  animation:comglow 16s ease-in-out infinite alternate}
+.hero-media::after{z-index:0}
+@keyframes comglow{to{opacity:.45}}
+.hero h1{text-wrap:balance}
+.hero p{line-height:1.55}
+.section-head h2,.section h2{text-wrap:balance}
+.index-row,.door{transition:border-color .2s ease,background-color .2s ease}
+@media (prefers-reduced-motion:reduce){.hero-media::before{display:none;animation:none}}
+html.js-motion .hero-copy > *,
+html.js-motion #navigator .section-head,
+html.js-motion #navigator .index-row,
+html.js-motion #navigator .section-action,
+html.js-motion .section.signal .signal-label,
+html.js-motion .section.signal #october-signal,
+html.js-motion .section.signal .signal-copy,
+html.js-motion .section.signal .signal-source,
+html.js-motion .section.signal .signal-actions,
+html.js-motion .section.doors .section-head,
+html.js-motion .section.doors .door,
+html.js-motion .shell.join .join-copy,
+html.js-motion .shell.join aside.trust,
+html.js-motion section.shell.cross,
+html.js-motion section.shell.cta-band > *{
+  visibility:hidden
+}
