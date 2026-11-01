@@ -27,3 +27,17 @@ html.js-motion section.shell.cross,
 html.js-motion section.shell.cta-band > *{
   visibility:hidden
 }
+
+/* Hover Lift — .com Navigator (motion named effect).
+   Progressive enhancement: CSS only, pointer devices only, no lift under reduced motion.
+   Uses independent `translate` (NOT transform): motion-home.js GSAP leaves inline transform
+   on .door after entrance; a :hover transform would be overridden and kill the lift.
+   Does not touch .hero-media. Lift 6px (.door) / 4px (.index-row), ease-out, 220ms. */
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .door,.index-row{transition:translate .22s ease-out,box-shadow .22s ease-out,background-color .22s ease-out,border-color .2s ease}
+  .door:hover,.door:focus-within{translate:0 -6px;box-shadow:0 14px 32px -18px rgba(0,0,0,.65),0 2px 0 0 var(--accent) inset;background-color:rgba(244,240,231,.025)}
+  .index-row:hover,.index-row:focus-within{translate:0 -4px;box-shadow:0 10px 24px -20px rgba(0,0,0,.7)}
+}
+@media (prefers-reduced-motion:reduce){
+  .door:hover,.door:focus-within,.index-row:hover,.index-row:focus-within{translate:none;box-shadow:none;background-color:rgba(244,240,231,.03)}
+}
