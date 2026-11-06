@@ -36,7 +36,7 @@ Display headlines are large, tightly spaced and limited to one highlighted idea.
 
 ## Motion and accessibility
 
-Motion is limited to hover and focus feedback. Reduced motion preferences are respected. Focus rings use the gold accent. Layouts collapse to a single reading column on small screens without horizontal overflow.
+Motion stays secondary to reading and navigation. The homepage uses a restrained GSAP reveal, including a one-time stagger on the starting-index rows and domain doors, plus a CSS hover lift on those same elements. A slow collections marquee under the hero repeats the Navigator collection names already used on the directory. Directory results fade in once, slightly staggered, the first time they appear. Reduced motion removes scrolling, the hover lift, and entrance movement. Focus rings use the gold accent. Layouts collapse to a single reading column on small screens without horizontal overflow.
 
 ## Raster provenance
 
