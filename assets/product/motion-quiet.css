@@ -1,0 +1,137 @@
+/* Quiet motion for .com: homepage collections marquee + one-time directory stagger.
+   Uses the translate property, never transform, so it does not fight GSAP or Hover Lift.
+   Without .is-animated the marquee is a wrapping list. Reduced motion never scrolls. */
+
+.si-marquee {
+  display: flex;
+  align-items: center;
+  gap: 10px 14px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 4px 12px 4px 16px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+}
+.si-marquee__label {
+  flex: none;
+  margin: 0;
+  color: var(--accent);
+  font: 700 11px/1 var(--mono, "SFMono-Regular", Consolas, monospace);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.si-marquee__viewport {
+  flex: 1 1 160px;
+  min-width: 0;
+  overflow: hidden;
+  container-type: inline-size;
+}
+.si-marquee__track { display: flex; width: 100%; }
+.si-marquee__group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  width: 100%;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  font: 700 12px/1.3 var(--mono, "SFMono-Regular", Consolas, monospace);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.si-marquee__toggle {
+  flex: none;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font: 700 10px/1 var(--mono, "SFMono-Regular", Consolas, monospace);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.si-marquee__toggle:hover { border-color: var(--accent); }
+
+.si-marquee.is-animated .si-marquee__track {
+  width: max-content;
+  animation: si-marquee-scroll 90s linear infinite;
+}
+.si-marquee.is-animated .si-marquee__group {
+  flex-wrap: nowrap;
+  width: auto;
+  min-width: 100cqi;
+  box-sizing: border-box;
+  gap: 0;
+  padding: 8px 1.5rem 8px 0;
+}
+.si-marquee.is-animated .si-marquee__group li {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.35rem;
+  flex: 1 0 auto;
+  justify-content: center;
+  white-space: nowrap;
+}
+.si-marquee.is-animated .si-marquee__group li + li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+.si-marquee.is-held .si-marquee__track { animation-play-state: paused; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .si-marquee.is-animated:hover .si-marquee__track { animation-play-state: paused; }
+}
+
+@keyframes si-marquee-scroll {
+  from { translate: 0 0; }
+  to { translate: -50% 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-results].is-staggering > .result[data-si-stagger] {
+    animation: si-stagger-in .46s cubic-bezier(.16, 1, .3, 1) both;
+    animation-delay: calc(var(--si-i, 0) * 45ms);
+  }
+}
+
+@keyframes si-stagger-in {
+  from { opacity: 0; translate: 0 8px; }
+  to { opacity: 1; translate: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .si-marquee__track { animation: none !important; translate: none !important; }
+  .si-marquee.is-animated .si-marquee__group { flex-wrap: wrap; min-width: 0; width: 100%; white-space: normal; }
+  .si-marquee.is-animated .si-marquee__group li { white-space: normal; }
+  .si-marquee__toggle { display: none !important; }
+  [data-results].is-staggering > .result {
+    animation: none !important;
+    opacity: 1 !important;
+    translate: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .si-marquee {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    padding-inline: 10px;
+    gap: 2px 8px;
+  }
+  .si-marquee__label { grid-column: 1; grid-row: 1; font-size: 10px; }
+  .si-marquee__toggle { grid-column: 2; grid-row: 1; justify-self: end; }
+  .si-marquee__viewport { grid-column: 1 / -1; grid-row: 2; flex-basis: auto; }
+}
