@@ -47,40 +47,104 @@
     const time = new Intl.DateTimeFormat('en-SG', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'Asia/Singapore' }).format(parsed);
     return date + ', ' + time + ' SGT';
   }
-  async function live() {
-    const response = await fetch(ENTRIES, { signal: AbortSignal.timeout(TIMEOUT) });
-    if (!response.ok) throw new Error('HTTP ' + response.status);
-    const data = await response.json();
-    if (!Array.isArray(data.entries)) throw new Error('Unexpected data shape');
+  function fail(code, error) {
+    const wrapped = new Error(error && error.message ? error.message : String(code));
+    wrapped.name = error && error.name || 'Error';
+    wrapped.code = code;
+    return wrapped;
+  }
+  function classify(error) {
+    if (error && typeof error.code === 'string') return error.code;
+    const name = error && error.name;
+    const message = String(error && error.message || '');
+    if (name === 'TimeoutError' || /timed out/i.test(message)) return 'timeout';
+    if (name === 'AbortError') return 'abort';
+    if (error instanceof SyntaxError) return 'format';
+    return 'network';
+  }
+  async function readJson(response) {
+    try { return await response.json(); }
+    catch (error) { throw fail('format', error); }
+  }
+  function timedSignal(controller) {
+    return AbortSignal.any([controller.signal, AbortSignal.timeout(TIMEOUT)]);
+  }
+  async function live(signal) {
+    let response;
+    try { response = await fetch(ENTRIES, { signal }); }
+    catch (error) { throw fail(classify(error), error); }
+    if (!response.ok) throw fail('http', new Error('HTTP ' + response.status));
+    const data = await readJson(response);
+    if (!data || !Array.isArray(data.entries)) throw fail('format', new Error('Unexpected data shape'));
     const entries = data.entries.map(mapEntry).filter(Boolean);
-    if (!entries.length) throw new Error('Unexpected data shape');
+    if (data.entries.length && !entries.length) throw fail('format', new Error('Unexpected data shape'));
     return { origin: 'live', entries, updated: stamp(entries) };
   }
-  async function bundled() {
-    const response = await fetch(STATIC);
-    if (!response.ok) throw new Error('HTTP ' + response.status);
-    const data = await response.json();
-    if (!Array.isArray(data)) throw new Error('Unexpected data shape');
+  async function bundled(signal) {
+    let response;
+    try { response = await fetch(STATIC, { signal }); }
+    catch (error) { throw fail(classify(error), error); }
+    if (!response.ok) throw fail('http', new Error('HTTP ' + response.status));
+    const data = await readJson(response);
+    if (!Array.isArray(data)) throw fail('format', new Error('Unexpected data shape'));
     const entries = data.map(mapEntry).filter(Boolean);
+    if (data.length && !entries.length) throw fail('format', new Error('Unexpected data shape'));
     return { origin: 'fallback', entries, updated: stamp(entries) };
   }
+  let generation = 0;
+  let controllers = [];
   let pending = null;
-  // Starts on script execution so the request overlaps page parsing; every caller shares the result.
-  function load() { return pending || (pending = live().catch(() => bundled())); }
+  function track(controller) { controllers.push(controller); return controller; }
+  function load() {
+    if (pending) return pending;
+    const gen = generation;
+    const controller = track(new AbortController());
+    pending = live(timedSignal(controller)).catch(error => {
+      if (gen !== generation || controller.signal.aborted) throw fail('abort', error);
+      const snap = track(new AbortController());
+      return bundled(timedSignal(snap)).catch(snapError => {
+        if (gen !== generation || snap.signal.aborted) throw fail('abort', snapError);
+        const liveCode = classify(error);
+        const snapCode = classify(snapError);
+        const code = snapCode === 'timeout' ? 'timeout' : snapCode === 'format' ? 'format' : liveCode === 'timeout' ? 'timeout' : liveCode === 'format' ? 'format' : 'unavailable';
+        throw fail(code, snapError);
+      });
+    });
+    return pending;
+  }
   function statsFrom(pack) {
     const by_kind = {};
     pack.entries.forEach(entry => { const kind = entry.kind || 'Organization'; by_kind[kind] = (by_kind[kind] || 0) + 1; });
     return { origin: pack.origin === 'live' ? 'live' : 'fallback', source: 'entries', stats: { version: 1, total: pack.entries.length, by_type: { organization: pack.entries.length }, by_kind }, updated: pack.updated };
   }
-  async function liveStats() {
-    const response = await fetch(STATS, { signal: AbortSignal.timeout(TIMEOUT) });
-    if (!response.ok) throw new Error('HTTP ' + response.status);
-    const stats = await response.json();
-    if (!stats || typeof stats.total !== 'number' || !stats.by_type || typeof stats.by_type !== 'object') throw new Error('Unexpected data shape');
+  async function liveStats(signal) {
+    let response;
+    try { response = await fetch(STATS, { signal }); }
+    catch (error) { throw fail(classify(error), error); }
+    if (!response.ok) throw fail('http', new Error('HTTP ' + response.status));
+    const stats = await readJson(response);
+    if (!stats || typeof stats.total !== 'number' || !stats.by_type || typeof stats.by_type !== 'object') throw fail('format', new Error('Unexpected data shape'));
     return { origin: 'live', source: 'stats', stats, updated: response.headers.get('date') || '' };
   }
   let statsPending = null;
-  function stats() { return statsPending || (statsPending = liveStats().catch(async () => statsFrom(await load()))); }
+  function stats() {
+    if (statsPending) return statsPending;
+    const gen = generation;
+    const controller = track(new AbortController());
+    statsPending = liveStats(timedSignal(controller)).catch(async error => {
+      if (gen !== generation || controller.signal.aborted) throw fail('abort', error);
+      return statsFrom(await load());
+    });
+    return statsPending;
+  }
+  function reload() {
+    generation += 1;
+    controllers.forEach(controller => controller.abort());
+    controllers = [];
+    pending = null;
+    statsPending = null;
+    return Promise.all([stats(), load()]);
+  }
   load().catch(() => {});
-  window.SIData = { load, stats, formatUpdated, API: ENTRIES, STATS, checked };
+  window.SIData = { load, stats, reload, formatUpdated, API: ENTRIES, STATS, checked };
 })();
