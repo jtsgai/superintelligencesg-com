@@ -1,13 +1,13 @@
 // Directory search, filter, history, and view-link checks. Local snapshot and intercepted responses only.
 import { spawn } from 'node:child_process';
-import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const artifacts = '/opt/cursor/artifacts';
+const artifacts = process.env.SI_ARTIFACTS_DIR || '/opt/cursor/artifacts';
 await mkdir(artifacts, { recursive: true });
 const failures = [];
 const check = (cond, message) => { if (!cond) failures.push(message); };
@@ -27,7 +27,7 @@ try {
   page.on((method, params) => {
     if (method !== 'Fetch.requestPaused') return;
     const url = params.request.url;
-    const kind = url.includes('/v1/stats') ? 'stats' : url.includes('/v1/entries') ? 'entries' : url.includes('organizations.json') ? 'snapshot' : '';
+    const kind = url.includes('/api/shortlists') && !url.includes('/api/shortlists/') ? 'shortlists' : url.includes('/v1/stats') ? 'stats' : url.includes('/v1/entries') ? 'entries' : url.includes('organizations.json') ? 'snapshot' : '';
     const action = plan[kind] || 'continue';
     const body = action === 'empty-entries' ? { entries: [] } : action === 'empty-stats' ? { version: 1, total: 0, by_type: { organization: 0 } } : { bad: true };
     const ignore = error => { if (!String(error.message || error).includes('Invalid InterceptionId')) failures.push(error.message || String(error)); };
@@ -42,10 +42,10 @@ try {
   });
   await page.send('Page.enable');
   await page.send('Runtime.enable');
-  await page.send('Fetch.enable', { patterns: [{ urlPattern: '*api.superintelligencesg.org/*' }, { urlPattern: '*organizations.json*' }] });
+  await page.send('Fetch.enable', { patterns: [{ urlPattern: '*api.superintelligencesg.org/*' }, { urlPattern: '*organizations.json*' }, { urlPattern: '*/api/shortlists*' }] });
 
   await size(page, 1280, 900, false);
-  plan = { entries: 'continue', stats: 'continue', snapshot: 'continue' };
+  plan = { entries: 'continue', stats: 'continue', snapshot: 'continue', shortlists: 'network' };
   await go(page, origin + '/directory.html');
   await waitFor(page, `document.body.innerText.includes('AI Singapore')`, 12000);
   const loaded = await read(page);
@@ -99,7 +99,55 @@ try {
   const backed = await read(page);
   check(backed.q === '100% & +', `back did not restore the query: ${JSON.stringify(backed)}`);
 
-  plan = { entries: 'network', stats: 'network', snapshot: 'network' };
+
+  // View link whitelist: only q, source, kind, lens, sort, open, page, entry may be copied.
+  const privateList = '00000000-0000-4000-8000-000000000000';
+  const allowedKeys = ['entry', 'kind', 'lens', 'open', 'page', 'q', 'sort', 'source'];
+  const junkKeys = ['utm_source', 'utm_medium', 'foo', 'tracking', 'fbclid', 'sourc', 'shortlist', 'list', 'work', 'notes'];
+  const keysOf = href => [...new URL(href).searchParams.keys()].sort();
+  const noJunk = href => !junkKeys.some(key => new URL(href).searchParams.has(key)) && !/utm_|foo=|shortlist=|list=|notes=/.test(href);
+  const landed = async (url, value) => { await go(page, url); await waitFor(page, `document.getElementById('search').value===${JSON.stringify(value)} && (document.querySelector('[data-status]')?.textContent||'').includes('result')`, 12000); };
+  const copyNow = async () => { await evalPage(page, `navigator.clipboard.writeText=text=>{window.__copied=text;return Promise.resolve()};window.__copied='';document.getElementById('copy-view').click()`); await delay(40); return evalPage(page, 'window.__copied'); };
+  const denyNow = async () => { await evalPage(page, `navigator.clipboard.writeText=()=>Promise.reject(new Error('denied'));document.getElementById('copy-view').click()`); await delay(40); return read(page); };
+
+  // Landing with junk plus private shortlist/list params, then Copy before any filter change.
+  const junkLanding = origin + `/directory.html?utm_source=x&foo=bar&q=test&lens=research&shortlist=ai-singapore&list=${privateList}&tracking=1&fbclid=z&notes=secret`;
+  await landed(junkLanding, 'test');
+  const junkCopied = await copyNow();
+  check(keysOf(junkCopied).join() === 'lens,q' && new URL(junkCopied).searchParams.get('q') === 'test' && new URL(junkCopied).searchParams.get('lens') === 'research' && noJunk(junkCopied), `junk landing copied unexpected link: ${junkCopied}`);
+  const junkDenied = await denyNow();
+  check(junkDenied.fallback === false && keysOf(junkDenied.viewUrl).join() === 'lens,q' && noJunk(junkDenied.viewUrl) && junkDenied.viewStatus.toLowerCase().includes('clipboard'), `junk landing fallback unexpected: ${JSON.stringify(junkDenied)}`);
+
+  // An unknown lens value is normalized away rather than copied.
+  await landed(origin + '/directory.html?utm_source=x&foo=bar&q=test&lens=ai', 'test');
+  const badLens = await copyNow();
+  check(keysOf(badLens).join() === 'q' && noJunk(badLens), `unknown lens copied unexpected link: ${badLens}`);
+
+  // Every whitelisted key with a non-default value survives; defaults and junk do not.
+  await landed(origin + '/directory.html?q=AI&source=public&kind=Research&open=1&sort=alpha&page=1&entry=ai-singapore&lens=public&utm_medium=m&tracking=1&list=' + privateList, 'AI');
+  const full = await copyNow();
+  const fullParams = new URL(full).searchParams;
+  check(noJunk(full) && keysOf(full).every(key => allowedKeys.includes(key)) && fullParams.get('q') === 'AI' && fullParams.get('source') === 'public' && fullParams.get('kind') === 'Research' && fullParams.get('open') === '1' && fullParams.get('sort') === 'alpha' && fullParams.get('entry') === 'ai-singapore' && fullParams.get('lens') === 'public' && !fullParams.has('page'), `full whitelist copied unexpected link: ${full}`);
+
+  // Default values and junk collapse to the bare directory path.
+  await landed(origin + '/directory.html?source=all&sort=featured&page=1&q=&open=0&lens=all&utm_source=x&foo=bar', '');
+  const bare = await copyNow();
+  check(bare === origin + '/directory.html', `default view link should be bare, got ${bare}`);
+
+  // Special characters still encode and round-trip, with junk dropped.
+  await landed(origin + '/directory.html?utm_source=x&foo=bar', '');
+  await typeQuery(page, '100% & +');
+  await waitFor(page, `location.search.includes('q=')`);
+  const specialCopied = await copyNow();
+  check(keysOf(specialCopied).join() === 'q' && new URL(specialCopied).searchParams.get('q') === '100% & +' && specialCopied.includes('%25') && specialCopied.includes('%26') && specialCopied.includes('%2B') && noJunk(specialCopied), `special characters copied unexpected link: ${specialCopied}`);
+  const addressBar = await evalPage(page, 'location.search');
+  check(!/utm_|foo=/.test(addressBar), `address bar kept junk after a filter change: ${addressBar}`);
+
+  // Copy shortlist link keeps its own list/shortlist flow.
+  const navigatorSource = await readFile(join(root, 'assets/product/navigator.js'), 'utf8');
+  check(navigatorSource.includes("u.searchParams.set('list',savedListID)") && navigatorSource.includes("shortlistURL.searchParams.set('shortlist',saved.join(','))"), 'shortlist share flow no longer uses list/shortlist');
+
+  plan = { entries: 'network', stats: 'network', snapshot: 'network', shortlists: 'network' };
   await go(page, origin + '/directory.html?q=AI%20Singapore&source=public');
   await waitFor(page, `document.body.innerText.includes('Directory data is unavailable')`, 12000);
   const failed = await read(page);
@@ -112,7 +160,7 @@ try {
   const emptyLive = await read(page);
   check(emptyLive.status.includes('0 results') && emptyLive.empty.includes('responded without entries') && !emptyLive.empty.includes('unavailable'), `empty live unexpected: ${JSON.stringify(emptyLive)}`);
 
-  plan = { entries: 'continue', stats: 'continue', snapshot: 'continue' };
+  plan = { entries: 'continue', stats: 'continue', snapshot: 'continue', shortlists: 'network' };
   await size(page, 390, 700, true);
   await go(page, origin + '/directory.html?q=AI%20Singapore');
   await waitFor(page, `document.body.innerText.includes('AI Singapore')`, 12000);

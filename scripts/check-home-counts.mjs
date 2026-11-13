@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const artifacts = '/opt/cursor/artifacts';
+const artifacts = process.env.SI_ARTIFACTS_DIR || '/opt/cursor/artifacts';
 await mkdir(artifacts, { recursive: true });
 const failures = [];
 const check = (cond, message) => { if (!cond) failures.push(message); };
