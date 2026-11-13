@@ -63,7 +63,7 @@ if (failures.length) {
 console.log('static checks ok');
 console.log('collections:', journey.join(' | '));
 
-const artifacts = '/opt/cursor/artifacts';
+const artifacts = process.env.SI_ARTIFACTS_DIR || '/opt/cursor/artifacts';
 await mkdir(artifacts, { recursive: true });
 const port = 8765;
 const server = spawn('python3', ['-m', 'http.server', String(port), '--bind', '127.0.0.1'], {

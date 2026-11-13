@@ -1,0 +1,32 @@
+/* Ripple: restrained click feedback for a few filled primary actions only.
+   Opt in with data-si-ripple. The ink is a child span with its own transform, so it never
+   touches the host's transform/translate (Hover Lift, GSAP). Ink uses currentColor, which
+   is dark on gold fills and light on outline buttons. Reduced motion shows nothing. */
+
+[data-si-ripple] {
+  position: relative;
+  overflow: hidden;
+}
+
+.si-ripple {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .si-ripple { animation: si-ripple .5s ease-out forwards; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .si-ripple { display: none !important; animation: none !important; }
+}
+
+@keyframes si-ripple {
+  from { opacity: .22; transform: scale(0); }
+  to { opacity: 0; transform: scale(1); }
+}
